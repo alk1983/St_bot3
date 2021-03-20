@@ -8,10 +8,14 @@
         Получить ключ можно в Кабинете разработчика: https://developer.tech.yandex.ru/keys/
     -->
 	<?php
-if(isset($_GET['lan']) AND isset($_GET['lon'])) {
-    $lan = $_GET['lan'];
+if(isset($_GET['lat']) AND isset($_GET['lon'])) {
+    $lat = $_GET['lat'];
 	$lon = $_GET['lon'];
-}
+   }
+   else {
+    $lat = 52.04;
+	$lon = 29.25;
+   }
 ?>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e032beba-5ad6-4498-9563-3a75e73c96d3" type="text/javascript"></script>
     <script src="event_properties.js" type="text/javascript"></script>
@@ -24,9 +28,9 @@ if(isset($_GET['lan']) AND isset($_GET['lon'])) {
 <body>
 <div id="map"></div>
 <script>
-var lan = '<?php echo$lan;?>';
+var lat = '<?php echo$lan;?>';
 var lon = '<?php echo$lon;?>';
-document.write('1'+lon+'2'+lan);
+document.write('1'+lon+'2'+lat);
 </script>
 </body>
 </html>

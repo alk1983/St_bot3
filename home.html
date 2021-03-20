@@ -52,7 +52,7 @@ if(isset($_GET['lan']) AND isset($_GET['long'])) {
             var map = new mapboxgl.Map({
                 container: 'map',
                 attributionControl: false, //need this to show a compact attribution icon (i) instead of the whole text
-                style: 'https://tiles.locationiq.com/v3/streets/vector.json?key='+locationiqKey,
+                style: 
                 zoom: 12,
                 center: ['<?php echo$lan;?>', '<?php echo$long;?>']
             });

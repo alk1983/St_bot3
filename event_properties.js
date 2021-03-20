@@ -1,8 +1,8 @@
 ymaps.ready(init);
 var myMap;
 
-var lan = '<?php echo$lan;?>'
-var lon = '<?php echo$lon;?>'
+var lan = '<?php echo$lan;?>';
+var lon = '<?php echo$lon;?>';
 function init () {
     myMap = new ymaps.Map("map", {
         center: [lan, lon], 

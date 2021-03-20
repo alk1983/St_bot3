@@ -1,15 +1,11 @@
 ymaps.ready(init);
 var myMap;
-<?php
-if(isset($_GET['lan']) AND isset($_GET['long'])) {
-    $lan = $_GET['lan'];
-	$long = $_GET['long'];
-}
-?>
 
+var lan = '<?php echo$lan;?>'
+var lon = '<?php echo$lon;?>'
 function init () {
     myMap = new ymaps.Map("map", {
-        center: ['<?php echo$lan;?>', '<?php echo$long;?>'], 
+        center: [lan, lon], 
         zoom: 11
     }, {
         balloonMaxWidth: 200,

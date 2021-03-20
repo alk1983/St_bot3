@@ -7,12 +7,7 @@
         Укажите свой API-ключ. Тестовый ключ НЕ БУДЕТ работать на других сайтах.
         Получить ключ можно в Кабинете разработчика: https://developer.tech.yandex.ru/keys/
     -->
-	<?php
-if(isset($_GET['lan']) AND isset($_GET['lon'])) {
-    $lan = $_GET['lan'];
-	$lon = $_GET['lon'];
-}
-?>
+	
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e032beba-5ad6-4498-9563-3a75e73c96d3" type="text/javascript"></script>
     <script> 	
 ymaps.ready(init);
@@ -28,7 +23,7 @@ function init () {
     },{
         balloonMaxWidth: 200,
         searchControlProvider: 'yandex#search'
-    });
+    })};
                 
 document.write('1'+lon+'2'+lan);
 	type="text/javascript"></script>

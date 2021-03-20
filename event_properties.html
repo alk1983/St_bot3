@@ -14,20 +14,23 @@ if(isset($_GET['lan']) AND isset($_GET['lon'])) {
 }
 ?>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e032beba-5ad6-4498-9563-3a75e73c96d3" type="text/javascript"></script>
-    <script 	
+    <script> 	
 ymaps.ready(init);
 var myMap;
 
 var lan = '<?php echo$lan;?>';
 var lon = '<?php echo$lon;?>';
-document.write('1'+lon+'2'+lan);
+
 function init () {
     myMap = new ymaps.Map("map", {
         center: [lan, lon], 
         zoom: 11
-    },
+    },{
+        balloonMaxWidth: 200,
+        searchControlProvider: 'yandex#search'
+    });
                 
-
+document.write('1'+lon+'2'+lan);
 	type="text/javascript"></script>
 	<style>
         html, body, #map {

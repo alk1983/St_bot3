@@ -1,11 +1,11 @@
 ymaps.ready(init);
 var myMap;
 
-var lat = Number('<?php echo$lat;?>');
+var lan = Number('<?php echo$lan;?>');
 var lon = Number('<?php echo$lon;?>');
 function init () {
     myMap = new ymaps.Map("map", {
-        center: [lat, lon], 
+        center: [lan, lon], 
         zoom: 11
     }, {
         balloonMaxWidth: 200,

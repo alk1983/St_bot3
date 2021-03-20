@@ -1,1 +1,1 @@
-<?php include_once("event_properties.html.html"); ?>
+<?php include_once("event_properties.html"); ?>

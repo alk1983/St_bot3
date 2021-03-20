@@ -15,7 +15,7 @@ if(isset($_GET['lan']) AND isset($_GET['lon'])) {
 ?>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e032beba-5ad6-4498-9563-3a75e73c96d3" type="text/javascript"></script>
     <script 	
-	ymaps.ready(init);
+ymaps.ready(init);
 var myMap;
 
 var lan = '<?php echo$lan;?>'
@@ -24,21 +24,9 @@ function init () {
     myMap = new ymaps.Map("map", {
         center: [lan, lon], 
         zoom: 11
-    }, {
-        balloonMaxWidth: 200,
-        searchControlProvider: 'yandex#search'
-    });
-
-    // Обработка события, возникающего при щелчке
-    // левой кнопкой мыши в любой точке карты.
-    // При возникновении такого события откроем балун.
-    myMap.events.add('click', function (e) {
-        if (!myMap.balloon.isOpen()) {
-            var coords = e.get('coords');
-            myMap.balloon.open(coords, {
-                contentHeader:'Событие!',
+    },
                 
-}
+
 	type="text/javascript"></script>
 	<style>
         html, body, #map {

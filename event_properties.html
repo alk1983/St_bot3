@@ -23,6 +23,7 @@ if(isset($_GET['lan']) AND isset($_GET['lon'])) {
     </style>
 </head>
 <body>
+<div id="map"></div>
 <form>
 <script>
 var D = '';
@@ -36,9 +37,9 @@ return D
 
  </script>
  <input type="button" value="Передать координаты боту" onclick='javascript:window.location="https://t.me/moypogoda_bot?start=L_"+func()'/>
-
-</form>
 <div id="map"></div>
+</form>
+
 
 </body>
 </html>

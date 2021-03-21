@@ -6,7 +6,7 @@ var lon = Number('<?php echo$lon;?>');
 var H = '';
 function init () {
     myMap = new ymaps.Map("map", {
-        center: [lan, lon], 
+        center: [55, 45], 
         zoom: 11
     }, {
         balloonMaxWidth: 200,
@@ -50,7 +50,8 @@ function init () {
     myMap.events.add('balloonopen', function (e) {
         myMap.hint.close();
     });
-	
+
 }
+
 	
 

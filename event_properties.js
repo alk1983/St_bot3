@@ -3,6 +3,7 @@ var myMap;
 
 var lan = Number('<?php echo$lan;?>');
 var lon = Number('<?php echo$lon;?>');
+var H = '';
 function init () {
     myMap = new ymaps.Map("map", {
         center: [lan, lon], 
@@ -11,13 +12,16 @@ function init () {
         balloonMaxWidth: 200,
         searchControlProvider: 'yandex#search'
     });
-
+    
     // Обработка события, возникающего при щелчке
     // левой кнопкой мыши в любой точке карты.
     // При возникновении такого события откроем балун.
     myMap.events.add('click', function (e) {
         if (!myMap.balloon.isOpen()) {
+
             var coords = e.get('coords');
+			var h = String(coords[0].toPrecision(6))+'_'+String(coords[1].toPrecision(6));
+			H = h;
             myMap.balloon.open(coords, {
                 contentHeader:'Событие!',
                 contentBody:'<p>Кто-то щелкнул по карте.</p>' +
@@ -31,6 +35,7 @@ function init () {
         else {
             myMap.balloon.close();
         }
+		
     });
 
     // Обработка события, возникающего при щелчке
@@ -45,4 +50,7 @@ function init () {
     myMap.events.add('balloonopen', function (e) {
         myMap.hint.close();
     });
+	
 }
+	
+

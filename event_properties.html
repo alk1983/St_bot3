@@ -10,8 +10,9 @@
 	<?php
 if(isset($_GET['lan']) AND isset($_GET['lon'])) {
     $lan = $_GET['lan'];
-	$lon = $_GET['lon'];
+	$lon = $_GET['lon'];	
 }
+
 ?>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e032beba-5ad6-4498-9563-3a75e73c96d3" type="text/javascript"></script>
     <script src="event_properties.js" type="text/javascript"></script>
@@ -22,11 +23,22 @@ if(isset($_GET['lan']) AND isset($_GET['lon'])) {
     </style>
 </head>
 <body>
-<div id="map"></div>
+<form>
 <script>
-var lan = '<?php echo$lan;?>';
-var lon = '<?php echo$lon;?>';
-document.write('1'+lon+'2'+lan);
-</script>
+var D = '';
+function func(){
+for (var i=0, len = H.length; i<len; i++){ 
+if (H[i]==='.'){D=D+'_';}
+else {D=D+H[i];}}
+return D
+}
+
+
+ </script>
+ <input type="button" value="Передать координаты боту" onclick='javascript:window.location="https://t.me/moypogoda_bot?start=L_"+func()'/>
+
+</form>
+<div id="map"></div>
+
 </body>
 </html>
